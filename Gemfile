@@ -10,9 +10,14 @@ gem 'puma', '~> 3.11'
 gem 'rack-cors'
 gem 'rails', '~> 5.2.6'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
+
 
 group :development, :test do
   gem 'annotate'
+  gem 'rswag-specs'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.0' # rspec-rails is a testing framework for Rails 3+
