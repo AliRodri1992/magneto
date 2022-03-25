@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'puma', '~> 3.11'
+gem 'rack-attack'
 gem 'rack-cors'
 gem 'rails', '~> 5.2.6'
 gem 'rswag'
