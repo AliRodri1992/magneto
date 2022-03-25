@@ -11,8 +11,9 @@
 class DnaAnalizer < ApplicationRecord
   validates :dna, presence: true
   validate :is_array?
+  validate :nitrogen_base?
 
-  after_save :is_mutant?
+  after_save :mutant?
 
   def is_array?
     !!JSON.parse(dna)
@@ -20,5 +21,14 @@ class DnaAnalizer < ApplicationRecord
     errors.add(:dna, "isn't a array")
   end
 
-  def is_mutant?; end
+  def mutant?; end
+
+  def nitrogen_base?
+    dna_array = JSON.parse(dna)
+    dna_array.each do |nitrogen_base|
+      errors.add(:dna, "isn't a valid nitrogen base") unless nitrogen_base.match(/^[GCTA]+$/)
+    end
+  rescue JSON::ParserError
+    errors.add(:dna, "isn't a valid nitrogen base")
+  end
 end

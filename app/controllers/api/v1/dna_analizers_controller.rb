@@ -8,7 +8,5 @@ class Api::V1::DnaAnalizersController < ApplicationController
     end
   end
 
-  def stat
-
-  end
+  def stat; end
 end
