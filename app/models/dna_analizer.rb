@@ -10,4 +10,11 @@
 #
 class DnaAnalizer < ApplicationRecord
   validates :dna, presence: true
+  validate :is_array?
+
+  def is_array?
+    !!JSON.parse(dna)
+  rescue JSON::ParserError
+    errors.add(:dna, "isn't a array")
+  end
 end

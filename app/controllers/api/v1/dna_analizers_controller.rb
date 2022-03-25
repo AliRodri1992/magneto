@@ -7,4 +7,8 @@ class Api::V1::DnaAnalizersController < ApplicationController
       render json: dna_analizer.errors, status: :unprocessable_entity, code: '422'
     end
   end
+
+  def stat
+
+  end
 end
