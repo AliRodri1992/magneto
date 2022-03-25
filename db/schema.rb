@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2022_03_25_183132) do
   enable_extension "plpgsql"
 
   create_table "dna_analizers", force: :cascade do |t|
-    t.text "dna", array: true
+    t.string "dna"
+    t.boolean "is_mutant"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

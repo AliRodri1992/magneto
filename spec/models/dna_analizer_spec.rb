@@ -3,7 +3,8 @@
 # Table name: dna_analizers
 #
 #  id         :bigint           not null, primary key
-#  dna        :text             is an Array
+#  dna        :string
+#  is_mutant  :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
