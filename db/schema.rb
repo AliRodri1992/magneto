@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_25_183132) do
+ActiveRecord::Schema.define(version: 2022_03_25_212442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2022_03_25_183132) do
   create_table "dna_analizers", force: :cascade do |t|
     t.string "dna"
     t.boolean "is_mutant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dna_stats", force: :cascade do |t|
+    t.integer "count_mutant_dna"
+    t.integer "count_human_dna"
+    t.decimal "ratio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
