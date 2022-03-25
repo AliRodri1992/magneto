@@ -8,4 +8,10 @@
 #  updated_at :datetime         not null
 #
 class DnaAnalizer < ApplicationRecord
+  validates :dna, presence: true
+  validate :array?
+
+  def array?
+    errors.add(:dna, :invalid) unless dna.is_a?(Array)
+  end
 end
