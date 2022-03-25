@@ -29,6 +29,8 @@ group :development do
 end
 
 group :test do
+  gem 'factory_bot_rails', '~> 6.2' # factory_bot is a fixtures replacement with a straightforward definition syntax, support for multiple build strategies
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0.0', require: false # Simple one-liner tests for common Rails functionality
   gem 'webdrivers', '~> 4.6' # Run Selenium tests more easily with install and updates for all supported webdrivers
 end
