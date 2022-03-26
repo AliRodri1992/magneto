@@ -1,5 +1,6 @@
 class Api::V1::DnaAnalizersController < ApplicationController
   before_action :initialize_or_find, only: %i[mutant]
+
   def mutant
     if @dna_analizer.save
       render json: @dna_analizer, status: :ok, code: '200'

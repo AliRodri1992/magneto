@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get '/stat', to: 'dna_analizers#stat'
     end
   end
+
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
 end

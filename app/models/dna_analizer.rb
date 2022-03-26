@@ -9,6 +9,8 @@
 #  updated_at :datetime         not null
 #
 class DnaAnalizer < ApplicationRecord
+  include SequenceAnalyzer
+
   validates :dna, presence: true
   validate :is_array?
   validate :nitrogen_base?
@@ -21,7 +23,9 @@ class DnaAnalizer < ApplicationRecord
     errors.add(:dna, "isn't a array")
   end
 
-  def mutant?; end
+  def mutant?
+    search_sequence(dna)
+  end
 
   def nitrogen_base?
     dna_array = JSON.parse(dna)
