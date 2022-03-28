@@ -12,8 +12,8 @@ class DnaAnalizer < ApplicationRecord
   include SequenceAnalyzer
 
   validates :dna, presence: true
-  validate :is_array?
-  validate :nitrogen_base?
+  # validate :is_array?
+  # validate :nitrogen_base?
 
   after_save :mutant?
 
