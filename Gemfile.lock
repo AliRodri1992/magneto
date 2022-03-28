@@ -249,11 +249,11 @@ DEPENDENCIES
   jsonapi-serializer
   jwt
   listen (>= 3.0.5, < 3.2)
-  pg
+  pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rack-attack
   rack-cors
-  rails (~> 5.2.6)
+  rails (~> 5.2.7)
   rails-controller-testing
   rspec-rails
   rswag
