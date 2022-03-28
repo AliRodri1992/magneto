@@ -37,7 +37,19 @@
         ],
         "responses": {
           "200": {
-            "description": "successful"
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": 1,
+                  "fullname": "Updated User Name",
+                  "email": "test@1.com",
+                  "password_digest": "$2a$04$gT9C8LfRqk8g/m/IU8y4s.wIxI3wF3R9ZbK05isFI99wyr.bIv0X2",
+                  "created_at": "2022-03-28T15:37:58.513Z",
+                  "updated_at": "2022-03-28T15:37:58.513Z"
+                }
+              }
+            }
           }
         }
       }
@@ -58,17 +70,17 @@
                     "id": 2,
                     "fullname": "Updated User Name",
                     "email": "test@1.com",
-                    "password_digest": "$2a$04$xb4kdSVxrDrsQC1ITS8.0OLv3umvyhvOsSdbNiqcUHE6nfBIrQ8/u",
-                    "created_at": "2022-03-28T14:58:32.963Z",
-                    "updated_at": "2022-03-28T14:58:32.963Z"
+                    "password_digest": "$2a$04$DolKzr0ID4ybitEnK1Ivb.MUymQ36EmmXeoMzq20MNV8wCJQMBJWq",
+                    "created_at": "2022-03-28T15:37:58.567Z",
+                    "updated_at": "2022-03-28T15:37:58.567Z"
                   },
                   {
                     "id": 3,
                     "fullname": "Updated User Name",
                     "email": "test@2.com",
-                    "password_digest": "$2a$04$j.BMR8a.1in6IDwurOl.eeVtBPTlt.1Tht0NmQ/XebCnuomO0tzCW",
-                    "created_at": "2022-03-28T14:58:32.969Z",
-                    "updated_at": "2022-03-28T14:58:32.969Z"
+                    "password_digest": "$2a$04$COZCE8NLfXBSldkgzIdg2.b1OvebSPKIooT2fBGo5nYyGRypZKTMG",
+                    "created_at": "2022-03-28T15:37:58.573Z",
+                    "updated_at": "2022-03-28T15:37:58.573Z"
                   }
                 ]
               }
@@ -115,11 +127,11 @@
               "application/json": {
                 "example": {
                   "id": 6,
-                  "fullname": null,
+                  "fullname": "New User",
                   "email": "new@gmail.com",
-                  "password_digest": "$2a$04$3yuyqRCav9Y8/wYEBotoUO5cTCznmDRt/CqDg0SfkZZNscl16j9cC",
-                  "created_at": "2022-03-28T14:58:33.011Z",
-                  "updated_at": "2022-03-28T14:58:33.011Z"
+                  "password_digest": "$2a$04$5gVRkJiVgCKqHWwkwutMTOdmpRLsUilxF7lKi5ORSn7Sb.VTo6rDK",
+                  "created_at": "2022-03-28T15:37:58.610Z",
+                  "updated_at": "2022-03-28T15:37:58.610Z"
                 }
               }
             }
@@ -212,9 +224,9 @@
                   "id": 11,
                   "fullname": "Updated User Name",
                   "email": "test@1.com",
-                  "password_digest": "$2a$04$xIJiOhPAuku.2AAQUORGS.8VgI/Vkl4qoarfjbOxnyAkgLvpwH3PK",
-                  "created_at": "2022-03-28T14:58:33.068Z",
-                  "updated_at": "2022-03-28T14:58:33.068Z"
+                  "password_digest": "$2a$04$knOwjWL3beLngtLvErjawuTNVIA.qVmWwk1qgcgWtVvk2uTqx./HO",
+                  "created_at": "2022-03-28T15:37:58.679Z",
+                  "updated_at": "2022-03-28T15:37:58.679Z"
                 }
               }
             }

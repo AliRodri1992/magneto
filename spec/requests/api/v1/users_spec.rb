@@ -17,7 +17,6 @@ RSpec.describe 'api/v1/users', type: :request do
             }
           }
         end
-
         run_test! do |response|
           resp = JSON.parse(response.body, symbolize_names: true)
           expect(resp[:data].count).to eq(total_users)
@@ -59,7 +58,6 @@ RSpec.describe 'api/v1/users', type: :request do
             }
           }
         end
-
         run_test! do |_response|
           expect(User.all.count).to eq(total_users + 1)
         end
@@ -83,7 +81,6 @@ RSpec.describe 'api/v1/users', type: :request do
             }
           }
         end
-
         run_test! do |response|
           resp = JSON.parse(response.body, symbolize_names: true)
           expect(resp[:data][:attributes][:email]).to eq(user1.email)
@@ -122,7 +119,6 @@ RSpec.describe 'api/v1/users', type: :request do
             }
           }
         end
-
         run_test! do |_response|
           user1.reload
           expect(user1.fullname).to eq('Updated User Name')
@@ -143,7 +139,6 @@ RSpec.describe 'api/v1/users', type: :request do
             }
           }
         end
-
         run_test! do |_response|
           expect(User.all.count).to eq(total_users - 1)
         end
@@ -176,7 +171,7 @@ RSpec.describe 'api/v1/users', type: :request do
         }
 
         let!(:user_params) { request_body }
-        let!(:Authorization) { "Bearer #{JsonWebToken.encode(user_id: user1.id)}" }
+        let!(:Authorization) { 'Bearer ' + JsonWebToken.encode(user_id: user1.id) }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -184,7 +179,6 @@ RSpec.describe 'api/v1/users', type: :request do
             }
           }
         end
-
         run_test!
       end
     end

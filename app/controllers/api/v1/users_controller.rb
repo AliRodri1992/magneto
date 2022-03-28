@@ -34,10 +34,18 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def change_password
+    if params[:user][:password] && @current_user.update(password: params[:user][:password])
+      render json: @current_user, status: :ok, code: '200'
+    else
+      render json: @current_user.errors, status: :unprocessable_entity, code: '422'
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:fullname, :email, :password)
   end
 
   def set_user

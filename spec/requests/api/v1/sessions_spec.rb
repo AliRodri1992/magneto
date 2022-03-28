@@ -41,7 +41,6 @@ RSpec.describe 'api/v1/sessions', type: :request do
             }
           }
         end
-
         run_test! do |response|
           resp = JSON.parse(response.body, symbolize_names: true)
           token = JsonWebToken.encode(user_id: user1.id)

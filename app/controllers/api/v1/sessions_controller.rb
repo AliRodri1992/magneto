@@ -1,11 +1,12 @@
 class Api::V1::SessionsController < ApplicationController
-  # POST /api/v1/login
   def login
     user = User.find_by(email: login_params[:email])
     if user.present? && user.authenticate(login_params[:password])
-      render jsonapi: user, status: :ok, code: '200'
+      token = JsonWebToken.encode(user_id: user.id)
+      render json: user, params: { auth_token: token },
+             status: :ok, code: '200'
     else
-      render jsonapi_errors: [{ title: 'Invalid Email or Password' }],
+      render json: [{ title: 'Invalid Email or Password' }],
              code: '401', status: :unauthorized
     end
   end
