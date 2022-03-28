@@ -24,5 +24,11 @@ module Magneto
     config.middleware.use Rack::Attack
     config.autoload_paths << Rails.root.join('lib')
     config.api_only = true
+
+    if Rails.env.test?
+      RSpec.configure do |config|
+        config.swagger_dry_run = false
+      end
+    end
   end
 end
