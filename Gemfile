@@ -13,6 +13,7 @@ gem 'puma', '~> 3.11'
 gem 'rack-attack'
 gem 'rack-cors'
 gem 'rails', '~> 5.2.7'
+gem 'rspec-core'
 gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
@@ -33,8 +34,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pry'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'pry'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

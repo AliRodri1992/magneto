@@ -261,6 +261,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 5.2.7)
   rails-controller-testing
+  rspec-core
   rspec-rails
   rswag
   rswag-api
