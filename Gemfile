@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.5'
 
 gem 'bcrypt'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jbuilder', '~> 2.5'
 gem 'jsonapi-serializer'
+gem 'jwt'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rack-attack'
@@ -15,7 +16,6 @@ gem 'rails', '~> 5.2.6'
 gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
-gem 'jwt'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
