@@ -6,6 +6,261 @@
     "description": "API Docs"
   },
   "paths": {
+    "/api/v1/login": {
+      "parameters": [
+        {
+          "name": "login_params",
+          "in": "body",
+          "schema": {
+            "properties": {
+              "user": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "password": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "post": {
+        "summary": "login session",
+        "tags": [
+          "Sessions"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "summary": "list users",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 2,
+                    "fullname": "Updated User Name",
+                    "email": "test@1.com",
+                    "password_digest": "$2a$04$xb4kdSVxrDrsQC1ITS8.0OLv3umvyhvOsSdbNiqcUHE6nfBIrQ8/u",
+                    "created_at": "2022-03-28T14:58:32.963Z",
+                    "updated_at": "2022-03-28T14:58:32.963Z"
+                  },
+                  {
+                    "id": 3,
+                    "fullname": "Updated User Name",
+                    "email": "test@2.com",
+                    "password_digest": "$2a$04$j.BMR8a.1in6IDwurOl.eeVtBPTlt.1Tht0NmQ/XebCnuomO0tzCW",
+                    "created_at": "2022-03-28T14:58:32.969Z",
+                    "updated_at": "2022-03-28T14:58:32.969Z"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create user",
+        "parameters": [
+          {
+            "name": "user_params",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "fullname": {
+                      "type": "string",
+                      "required": true
+                    },
+                    "email": {
+                      "type": "string",
+                      "required": true
+                    },
+                    "password": {
+                      "type": "string",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "201": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": 6,
+                  "fullname": null,
+                  "email": "new@gmail.com",
+                  "password_digest": "$2a$04$3yuyqRCav9Y8/wYEBotoUO5cTCznmDRt/CqDg0SfkZZNscl16j9cC",
+                  "created_at": "2022-03-28T14:58:33.011Z",
+                  "updated_at": "2022-03-28T14:58:33.011Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "description": "User id",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "show user",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "id": "7",
+                    "type": "user",
+                    "attributes": {
+                      "fullname": "Updated User Name",
+                      "email": "test@1.com",
+                      "auth_token": null
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "update user",
+        "parameters": [
+          {
+            "name": "user_params",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "fullname": {
+                      "type": "string",
+                      "required": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": "unprocessable_entity"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete user",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": 11,
+                  "fullname": "Updated User Name",
+                  "email": "test@1.com",
+                  "password_digest": "$2a$04$xIJiOhPAuku.2AAQUORGS.8VgI/Vkl4qoarfjbOxnyAkgLvpwH3PK",
+                  "created_at": "2022-03-28T14:58:33.068Z",
+                  "updated_at": "2022-03-28T14:58:33.068Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/change_password": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string"
+        }
+      ],
+      "patch": {
+        "summary": "change_password user",
+        "parameters": [
+          {
+            "name": "user_params",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "password": {
+                      "type": "string",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    }
   },
   "schemes": [
     "http",

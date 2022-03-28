@@ -1,4 +1,3 @@
-# class for authentication with jwt
 class JsonWebToken
   JWT_SECRET_KEY = ENV['JWT_SECRET_KEY']
   class << self
