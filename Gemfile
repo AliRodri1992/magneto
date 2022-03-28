@@ -15,6 +15,7 @@ gem 'rails', '~> 5.2.6'
 gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'jwt'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
