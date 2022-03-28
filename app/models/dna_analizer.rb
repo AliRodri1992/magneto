@@ -24,7 +24,7 @@ class DnaAnalizer < ApplicationRecord
   end
 
   def mutant?
-    search_sequence(dna)
+    update_column(:is_mutant, search_sequence(dna))
   end
 
   def nitrogen_base?
