@@ -24,7 +24,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'faker', '~> 2.19' # A library for generating fake data such as names, addresses, and phone numbers
   gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 5.0' # rspec-rails is a testing framework for Rails 3+
+  gem 'rspec-rails'
   gem 'rswag-specs'
   gem 'rubocop', '~> 1.22', require: false # Automatic Ruby code style checking tool
   gem 'rubocop-performance', '~> 1.11', require: false # A collection of RuboCop cops to check for performance optimizations in Ruby code
