@@ -12,4 +12,8 @@
 class UserSerializer
   include JSONAPI::Serializer
   attributes :fullname, :email
+
+  attribute :auth_token do |user, params|
+    params[:auth_token]
+  end
 end
