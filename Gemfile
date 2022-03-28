@@ -6,6 +6,7 @@ ruby '2.7.0'
 gem 'bcrypt'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jbuilder', '~> 2.5'
+gem 'jsonapi-serializer'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rack-attack'
@@ -20,6 +21,7 @@ group :development, :test do
   gem 'annotate'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
+  gem 'faker', '~> 2.19' # A library for generating fake data such as names, addresses, and phone numbers
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.0' # rspec-rails is a testing framework for Rails 3+
   gem 'rswag-specs'

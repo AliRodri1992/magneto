@@ -8,7 +8,7 @@ module SequenceAnalyzer
         count_mutant_sequence += 1 if horizontal_processor(i, j, multidimensional_adn[i][j], multidimensional_adn)
         count_mutant_sequence += 1 if vertical_processor(i, j, multidimensional_adn[i][j], multidimensional_adn)
         count_mutant_sequence += 1 if diagonal_processor(i, j, multidimensional_adn[i][j], multidimensional_adn)
-        # count_mutant_sequence += 1 if diagonal_inverter_processor(i, j, multidimensional_adn[i][j], multidimensional_adn)
+        count_mutant_sequence += 1 if diagonal_inverter_processor(i, j, multidimensional_adn)
       end
     end
 
@@ -43,7 +43,7 @@ module SequenceAnalyzer
     true
   end
 
-  def diagonal_inverter_processor(i, j, value_to_check, dna)
+  def diagonal_inverter_processor(i, j, dna)
     value_to_check = dna[3][j]
     (1..3).each do |x|
       return false if x > dna.size - 1 || (i - x).negative?
