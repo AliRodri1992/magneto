@@ -4,7 +4,7 @@ class Api::V1::DnaAnalizersController < ApplicationController
 
   def mutant
     if @dna_analizer.save
-      if @dna_analizer
+      if @dna_analizer.is_mutant == true
         render json: { is_mutant:  @dna_analizer.is_mutant, status: :ok, code: '200' }
       else
         render json: { is_mutant:  @dna_analizer.is_mutant, status: :forbidden, code: '403' }
