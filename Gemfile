@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '2.5.8'
 
 gem 'bcrypt'
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -41,6 +41,6 @@ end
 group :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers', '~> 5.0.0', require: false # Simple one-liner tests for common Rails functionality
+  gem 'shoulda-matchers'
   gem 'webdrivers', '~> 4.6' # Run Selenium tests more easily with install and updates for all supported webdrivers
 end
